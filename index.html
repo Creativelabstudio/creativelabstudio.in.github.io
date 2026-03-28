@@ -356,15 +356,18 @@
     <section id="contact" class="contact">
         <h2>Ready to Start Your Project?</h2>
         <p>Let's discuss your website needs and create something amazing together.</p>
-        <form class="contact-form" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="text" placeholder="Your Phone" required>
-            </div>
-            <textarea placeholder="Tell us about your project..." required></textarea>
-            <button type="submit" class="cta-button" style="width: 100%; font-size: 1.1rem;">Send Message</button>
-        </form>
+        <form class="contact-form" action="https://formspree.io/f/abcd1234" method="POST">
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="phone" placeholder="Your Phone" required>
+    </div>
+    <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+    
+    <button type="submit" class="cta-button" style="width: 100%; font-size: 1.1rem;">
+        Send Message
+    </button>
+</form>
         <p style="margin-top: 1rem;">Or contact me directly at: <a href="mailto:creativelabstudio02@example.com" style="color: var(--primary);">creativelabstudio02@gmail.com</a></p>
     </section>
 
@@ -385,11 +388,7 @@
         });
 
         // Form submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Thank you! Your message has been sent. We\'ll get back to you soon.');
-            event.target.reset();
-        }
+    
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
